@@ -1,6 +1,7 @@
 var snakeCase = function(str) {
-  var newStr = str.replace(/[^a-zA-Z ]/g, '').trim();
-  return newStr.split(' ').join(',');
+  var newArr = str.replace(/\W+/g, '');
+  var myStr = newArr.split(/(?=[A-Z])/).join('_').toLowerCase();
+  return myStr;
 }
 
 module.exports = snakeCase
